@@ -4,7 +4,7 @@ import { getMovies, getById, addMovie, deleteMovie } from './db';
 // Rest API에서는 URL이 있엇다면 GraphQL에서는 Resolver가 있다.
 const resolvers = {
     Query: {
-        movies: () => getMovies(),
+        movies: (_, { limit, rating }) => getMovies(limit, rating),
     },
 };
 
