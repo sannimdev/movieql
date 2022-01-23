@@ -1,73 +1,39 @@
-export const people = [
+let movies = [
     {
         id: 0,
-        name: 'Nicolas',
-        age: 18,
-        gender: 'female',
+        name: 'Star wars - The new one',
+        score: 1,
     },
     {
         id: 1,
-        name: 'Leanne Graham',
-        age: 31,
-        gender: 'male',
+        name: 'Avengers - The new one',
+        score: 8,
     },
     {
         id: 2,
-        name: 'Ervin Howell',
-        age: 55,
-        gender: 'male',
+        name: 'The Godfather I',
+        score: 9,
     },
     {
         id: 3,
-        name: 'Clementine Bauch',
-        age: 53,
-        gender: 'male',
-    },
-    {
-        id: 4,
-        name: 'Patricia Lebsack',
-        age: 60,
-        gender: 'female',
-    },
-    {
-        id: 5,
-        name: 'Chelsey Dietrich',
-        age: 8,
-        gender: 'female',
-    },
-    {
-        id: 6,
-        name: 'Mrs. Dennis Schulist',
-        age: 54,
-        gender: 'male',
-    },
-    {
-        id: 7,
-        name: 'Kurtis Weissnat',
-        age: 77,
-        gender: 'male',
-    },
-    {
-        id: 8,
-        name: 'Nicholas Runolfsdottir V',
-        age: 2,
-        gender: 'female',
-    },
-    {
-        id: 9,
-        name: 'Glenna Reichert',
-        age: 80,
-        gender: 'male',
-    },
-    {
-        id: 10,
-        name: 'Clementina DuBuque',
-        age: 23,
-        gender: 'male',
+        name: 'Logan',
+        score: 2,
     },
 ];
 
-export const getById = (id) => {
-    const filteredPeople = people.filter((person) => id === person.id);
-    return filteredPeople[0];
+export const getMovies = () => movies;
+
+export const getbyId = (id) => {
+    const filteredMovies = movies.filter((movie) => movie.id === String(id));
+    return filteredMovies[0];
+};
+
+export const deleteMovie = (id) => {
+    const cleanedMovies = movies.filter((movie) => movie.id !== String(id));
+    if (movies.length > cleanedMovies.length) {
+        movie = cleanedMovies;
+        return true;
+    } else {
+        return false;
+    }
 };
